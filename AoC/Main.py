@@ -9,6 +9,7 @@ class Console:
         display() : Displays currently set day and part.
         run()     : Executes currently set day and part.
         back      : Back to Main Menu.
+        set(x,y)  : Set day and part without going back.
         """
 
         while True:
@@ -25,7 +26,7 @@ class Console:
                     try:
                         eval("d." + answer)
                     except Exception:
-                        "No valid day or part given!"
+                        print("Invalid command given, type \"help\" for list of commands.")
                     if answer == "back":
                         break
                     if answer == "help":
