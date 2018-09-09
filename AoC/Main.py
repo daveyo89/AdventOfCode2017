@@ -23,14 +23,16 @@ class Console:
                 inside = True
                 while inside:
                     answer = input("Waiting for input..\n")
-                    try:
-                        eval("d." + answer)
-                    except Exception:
-                        print("Invalid command given, type \"help\" for list of commands.")
+
                     if answer == "back":
                         break
                     if answer == "help":
                         print(Console.run.__doc__)
+                    else:
+                        try:
+                            eval("d." + answer)
+                        except Exception:
+                            print("Invalid command given, type \"help\" for list of commands.")
 
 
 def switch():

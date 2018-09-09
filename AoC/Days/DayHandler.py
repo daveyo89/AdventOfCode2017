@@ -1,4 +1,4 @@
-from AoC.Days import Day1, Day2, Day3, Day4, Day5
+from AoC.Days import Day1, Day2, Day3, Day4, Day5, Day6, Day7, Day8
 
 
 class DayHandler:
@@ -41,8 +41,12 @@ class DayHandler:
         print(str(self.day) + " " + str(self.part))
 
     def set(self, *args):
-        self.day = args[0]
-        self.part = args[1]
+        if 9 > args[0] > 0 and 3 > args[1] > 0:
+            self.day = args[0]
+            self.part = args[1]
+        else:
+            raise print("Invalid interval")
+
 
     def run(self):
         x, y = self._day, self._part
